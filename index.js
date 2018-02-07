@@ -35,7 +35,7 @@ app.get('/api', function (req, res) {
     res.send('api');
 });
 
-app.get('/api/protected', ensureToken, function (req, res) {
+app.get('/api/justify', ensureToken, function (req, res) {
     jwt.verify(req.token, 'my_secret_key', function(err, data) {
         if(err) {
             res.sendStatus(403);
